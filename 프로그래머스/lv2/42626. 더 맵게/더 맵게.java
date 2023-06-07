@@ -18,7 +18,6 @@ class Solution {
             pq.add(pq.poll() + (pq.poll()*2));
 			answer++;
 		}
-		if(answer == size) answer = -1;
         
         return answer;
     }
