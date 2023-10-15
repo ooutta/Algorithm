@@ -1,9 +1,6 @@
 import java.util.*;
 
 class Solution {
-    int move[][] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-    int[][] maps;
-    int answer;
     
     class Point {
         int x, y, dist;
@@ -14,12 +11,15 @@ class Solution {
         }
     }
     
-    private int bfs(int x, int y) {
+    private int bfs(int[][] maps, int x, int y) {
+        int move[][] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+    
         int row = maps.length, col = maps[0].length;
         boolean[][] visited = new boolean[row][col];
+        visited[x][y] = true;
+        
         Queue<Point> queue = new LinkedList<>();
         queue.offer(new Point(0, 0, 1));
-        visited[x][y] = true;
         
         while(!queue.isEmpty()) {
             Point p = queue.poll();
@@ -48,10 +48,6 @@ class Solution {
         return -1;
     }
     public int solution(int[][] maps) {
-        answer = 0;
-        this.maps = maps;
-        this.answer = answer;
-        
-        return bfs(0, 0);
+        return bfs(maps, 0, 0);
     }
 }
