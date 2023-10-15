@@ -19,7 +19,7 @@ class Solution {
         visited[x][y] = true;
         
         Queue<Point> queue = new LinkedList<>();
-        queue.offer(new Point(0, 0, 1));
+        queue.offer(new Point(x, y, 1));
         
         while(!queue.isEmpty()) {
             Point p = queue.poll();
