@@ -18,15 +18,15 @@ class Solution {
         
         int max = Collections.max(list);
         
-        List<Integer> test = new ArrayList<>();
-        test.add(list.indexOf(max) + 1);
+        List<Integer> result = new ArrayList<>();
+        result.add(list.indexOf(max) + 1);
         
         for(int i = 0; i < list.size(); i++) {
-            if(i != list.indexOf(max)
-               && max == list.get(i)) test.add(i+1);
+            if(i != list.indexOf(max) && max == list.get(i)) 
+                result.add(i+1);
         }
         
-        return test.stream()
+        return result.stream()
                 .mapToInt(i -> i)
                 .toArray();
     }
