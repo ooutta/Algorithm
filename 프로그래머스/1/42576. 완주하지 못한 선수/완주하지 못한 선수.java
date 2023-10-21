@@ -2,9 +2,6 @@ import java.util.*;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        // String[] t = {"mislav", "stanko", "mislav", "ana", "mislav"};
-        // String [] tt = {"stanko", "ana", "mislav"};
-        
         HashSet<String> setMap = new HashSet<>();
         List<String> duplicateNameList = new ArrayList<>();
         
