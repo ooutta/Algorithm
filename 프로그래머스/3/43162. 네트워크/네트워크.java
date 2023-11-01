@@ -1,9 +1,9 @@
 class Solution {
-    private void dfs(int n, int[][] computers, boolean[] visited, int i) {
+    private void dfs(int[][] computers, boolean[] visited, int i) {
         visited[i] = true;
         for(int j = 0; j < computers[i].length; j++) {
             if(i != j && computers[i][j] == 1 && !visited[j]) {
-                dfs(n, computers, visited, j);
+                dfs(computers, visited, j);
             }
         }
     }
@@ -14,7 +14,7 @@ class Solution {
         
         for(int i = 0; i < n; i++) {
             if(!visited[i]) {
-                dfs(n, computers, visited, i);
+                dfs(computers, visited, i);
                 answer++;
             }
         }
