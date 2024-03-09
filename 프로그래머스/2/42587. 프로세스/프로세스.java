@@ -26,13 +26,9 @@ class Solution {
             if(!isMaxPriority) {
                 que.add(front);
             } else {
-                runIndexList[index++] = front[0];
+                answer++;
+                if(front[0] == location) return answer;
             }
-        }
-        
-        for(int x = 0; x < runIndexList.length; x++) {
-            if(runIndexList[x] == location) answer = x + 1;
-            
         }
         return answer;
     }
